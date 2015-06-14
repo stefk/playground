@@ -1,15 +1,15 @@
-import debug from 'debug';
+import Debug from 'debug';
 
-const DEBUG_PREFIX = 'dispatcher';
+const DEBUG_PREFIX = 'player:dispatcher';
 
 export default class Dispatcher {
   constructor() {
     this._listeners = {};
-    this.log = debug(DEBUG_PREFIX);
+    this.log = Debug(DEBUG_PREFIX);
   }
 
-  setDebugMode(isDebug) {
-    debug[isDebug ? 'enable' : 'disable'](DEBUG_PREFIX);
+  static getDebugPrefix() {
+    return DEBUG_PREFIX;
   }
 
   listen(eventName, callback, receiver) {
@@ -17,6 +17,10 @@ export default class Dispatcher {
       this._listeners[eventName] = [];
     }
 
+    this.log(
+      'registering listener for event "%s" (receiver: %o)',
+      eventName, receiver
+    );
     this._listeners[eventName].push({callback, receiver});
   }
 

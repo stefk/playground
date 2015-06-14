@@ -12,6 +12,13 @@ export default class Player extends WiredComponent {
   }
 
   render() {
-    return (<h1>Test</h1>);
+    return (
+      <div>
+        <h1>Player</h1>
+        <ul>
+          {this.props.items.map(item => <li>{item}</li>)}
+        </ul>
+      </div>
+    );
   }
 }
