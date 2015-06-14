@@ -4,11 +4,6 @@ module.exports = {
     path: './dist',
     filename: 'bundle.js'
   },
-  resolve: {
-    alias: {
-      'react': __dirname + '/node_modules/react/lib/React.js'
-    }
-  },
   module: {
     loaders: [
       {
