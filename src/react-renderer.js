@@ -1,6 +1,6 @@
 import React from 'react';
 import DispatcherMixin from './dispatcher-mixin.js';
-import Player from './components/player.jsx';
+import Player from './components/quiz-player.jsx';
 
 export default class Renderer {
   constructor(element) {

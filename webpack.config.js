@@ -10,6 +10,10 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader?stage=1&optional=runtime'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ]
   },

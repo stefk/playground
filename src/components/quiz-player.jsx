@@ -18,14 +18,14 @@ export default class Player extends React.Component {
 
   onChange(event) {
     this.selected = this.props.choices.filter(choice => {
-      return choice.id == event.target.value;
+      return choice.id === event.target.value;
     })[0];
   }
 
   render() {
     return (
       <div>
-        <h1>Player</h1>
+        <h2>Quiz Player</h2>
         {this.props.choices.map(choice => {
           return (
             <div key={choice.id}>

@@ -14,7 +14,7 @@ From scratch:
 ```bash
 
 npm install react debug --save
-npm install webpack webpack-dev-server babel-loader babel-runtime --save-dev
+npm install webpack webpack-dev-server babel-loader babel-runtime json-loader --save-dev
 
 ```
 
