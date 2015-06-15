@@ -1,7 +1,7 @@
 import React from 'react';
 import DispatcherMixin from './../dispatcher-mixin.js';
 
-export default class Player extends React.Component {
+export default class QuizPlayer extends React.Component {
   constructor(props) {
     super(props);
     this.selected = null;
@@ -43,4 +43,4 @@ export default class Player extends React.Component {
   }
 };
 
-Object.assign(Player.prototype, DispatcherMixin);
+Object.assign(QuizPlayer.prototype, DispatcherMixin);

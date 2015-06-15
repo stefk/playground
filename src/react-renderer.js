@@ -1,6 +1,6 @@
 import React from 'react';
 import DispatcherMixin from './dispatcher-mixin.js';
-import Player from './components/quiz-player.jsx';
+import QuizPlayer from './components/quiz-player.jsx';
 
 export default class Renderer {
   constructor(element) {
@@ -9,7 +9,7 @@ export default class Renderer {
   }
 
   render(data) {
-    React.render(React.createElement(Player, data), this._element);
+    React.render(React.createElement(QuizPlayer, data), this._element);
   }
 }
 
