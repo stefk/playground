@@ -1,15 +1,16 @@
 import React from 'react';
-import Player from './player.jsx';
+import DispatcherMixin from './dispatcher-mixin.js';
+import Player from './components/player.jsx';
 
 export default class Renderer {
-  constructor(dispatcher, element) {
-    this._dispatcher = dispatcher;
+  constructor(element) {
     this._element = element;
-    this._dispatcher.listen('render', this.render.bind(this), this);
+    this.listen('render', this.render);
   }
 
   render(data) {
-    data.dispatcher = this._dispatcher;
     React.render(React.createElement(Player, data), this._element);
   }
 }
+
+Object.assign(Renderer.prototype, DispatcherMixin);

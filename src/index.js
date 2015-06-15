@@ -1,15 +1,23 @@
 import Dispatcher from './dispatcher.js';
+import Player from './player.js';
 import ReactRenderer from './react-renderer.js';
 import Debug from 'debug';
 
-//Debug.storage = null;
-//Debug.enable(Dispatcher.getDebugPrefix());
+Debug.storage = null;
+Debug.enable(Dispatcher.getDebugPrefix());
 
-let dispatcher = new Dispatcher();
-let renderer = new ReactRenderer(dispatcher, document.querySelector('main'));
+let player = new Player();
+let renderer = new ReactRenderer(document.querySelector('main'));
 
-dispatcher.emit('render', {items:[1, 2, 3]}, 'MAIN');
-
-setTimeout(() => {
-  dispatcher.emit('render', {items:[4, 5, 6]}, 'MAIN');
-}, 2000);
+player.play({
+  challenge: {
+    choices: [
+      {id: 1, text: 'Item 1'},
+      {id: 2, text: 'Item 2'},
+      {id: 3, text: 'Item 3'}
+    ]
+  },
+  solution: {
+    correctChoiceId: 2
+  }
+});
